@@ -13,9 +13,9 @@ public:
   BasicString(size_t max_size);
   ~BasicString();
   BasicString(const BasicString& other);
-  BasicString(const BasicString&& other);
+  BasicString(BasicString&& other);
   BasicString& operator=(const BasicString& other);
-  BasicString& operator=(const BasicString&& other);
+  BasicString& operator=(BasicString&& other);
   bool append_line(char* line);
 };
 } // namespace basicstring
