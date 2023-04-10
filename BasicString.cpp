@@ -24,9 +24,10 @@ BasicString::BasicString(const BasicString& other)
 
 // Move constructor
 BasicString::BasicString(BasicString&& other) noexcept
-    : max_size{other.max_size}, length{other.length}, buffer{std::move(other.buffer)} {
+    : max_size{other.max_size}, length{other.length}, buffer{other.buffer} {
   other.length = 0;
   other.max_size = 0;
+  other.buffer = nullptr;
 }
 
 // Copy assignment
