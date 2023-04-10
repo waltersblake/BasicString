@@ -50,6 +50,7 @@ BasicString& BasicString::operator=(BasicString&& other) {
   if (this == &other) {
     return *this;
   }
+  delete[] buffer;
   max_size = other.max_size;
   length = other.length;
   buffer = other.buffer;
