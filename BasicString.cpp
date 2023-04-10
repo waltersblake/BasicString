@@ -2,7 +2,6 @@
 #include <cstddef>
 #include <cstring>
 #include <stdexcept>
-#include <utility>
 
 namespace basicstring {
 
@@ -52,10 +51,11 @@ BasicString& BasicString::operator=(BasicString&& other) {
   }
   max_size = other.max_size;
   length = other.length;
-  buffer = std::move(other.buffer);
+  buffer = other.buffer;
 
   other.max_size = 0;
   other.length = 0;
+  other.buffer = nullptr;
 
   return *this;
 }
